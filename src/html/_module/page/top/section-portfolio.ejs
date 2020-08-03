@@ -1,0 +1,31 @@
+<%
+const works = [
+  {
+    title: 'ランディングページ作成',
+    text: 'Webデザイン',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'Placeholder image',
+  },
+  {
+    title: 'SEO調査',
+    text: 'デジタルマーケティング',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'Placeholder image',
+  },
+  {
+    title: 'HTML/CSSマークアップ',
+    text: 'マークアップ',
+    img: 'https://bulma.io/images/placeholders/640x320.png',
+    alt: 'Placeholder image',
+  },
+];
+-%>
+<section id="section-portfolio">
+  <div class="container">
+    <div class="section">
+      <p class="subtitle has-text-centered">Portfolio</p>
+      <h2 class="title has-text-centered">最近のプロジェクト</h2>
+<%- include('../../component/works', {works}); -%>
+    </div>
+  </div>
+</section>
