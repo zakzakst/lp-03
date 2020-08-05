@@ -15,9 +15,11 @@ const pageData = {
 
 <main>
 <div style="height: 1000px;"></div>
+<%- include(pageData.root + './_module/section/section-feature'); -%>
 <%- include(pageData.root + './_module/section/section-about'); -%>
 <%- include(pageData.root + './_module/section/section-gallery'); -%>
 <%- include(pageData.root + './_module/section/section-map'); -%>
+<!-- <div style="height: 1000px;"></div> -->
 </main>
 
 <%- include(pageData.root + './_module/layout/layout-foot', {pageData, commonData}); -%>
