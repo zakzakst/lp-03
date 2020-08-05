@@ -16,14 +16,6 @@
       <!-- メニュー -->
       <div class="navbar-menu" id="js-header__navbar-menu">
         <div class="navbar-end">
-        <% for(let i = 0; i < commonData.navList.length; i++) { -%>
-          <% let navItem = commonData.navList[i]; -%>
-          <% if(navItem.name === pageData.currentNav) { %>
-          <a class="navbar-item is-active" href="<%= navItem.path %>"><%= navItem.name %></a>
-          <% } else { %>
-          <a class="navbar-item" href="<%= navItem.path %>"><%= navItem.name %></a>
-          <% } -%>
-        <% } %>
         </div>
       </div>
     </div>

@@ -1,35 +1,21 @@
 <%
 const pageData = {
-  title: 'ランディングページ02',
+  title: 'ランディングページ03',
   subTitle: 'This Is Page of Top',
   keywords: 'キーワード01,キーワード02,キーワード03,キーワード04,キーワード05',
   description: 'ページの概要が入ります。',
   root: '',
-  path: 'works/lp-02/',
-  currentNav: 'top',
-  addHeadLinks: ['https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'],
+  path: 'works/lp-03/',
+  addHeadLinks: [],
   addHeadScripts: [],
-  addFootScripts: ['https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
+  addFootScripts: [],
 };
 -%>
 <%- include(pageData.root + './_module/layout/layout-head', {pageData, commonData}); -%>
 
 <main>
-<%- include(pageData.root + './_module/page/top/section-top', {pageData}); -%>
-
-<%- include(pageData.root + './_module/page/top/section-about'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-service'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-portfolio'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-experience'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-count-up'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-gallery'); -%>
-
-<%- include(pageData.root + './_module/page/top/section-voices'); -%>
+<%- include(pageData.root + './_module/section/section-gallery'); -%>
+<%- include(pageData.root + './_module/section/section-map'); -%>
 </main>
 
 <%- include(pageData.root + './_module/layout/layout-foot', {pageData, commonData}); -%>
