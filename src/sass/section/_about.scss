@@ -1,0 +1,36 @@
+.section-about {
+  position: relative;
+  padding: 72px 0;
+  overflow: hidden;
+}
+
+.about__content {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  color: #fff;
+  background: rgba(0, 0, 0, .5);
+  z-index: 2;
+}
+
+.about__ttl {
+  margin-bottom: 16px;
+  font-size: $fz-lg;
+  font-weight: bold;
+}
+
+.about__txt {
+  margin-bottom: 12px;
+}
+
+.about__bg {
+  position: absolute;
+  top: 0;
+  bottom: -500px;
+  left: 0;
+  right: 0;
+  background: url(https://picsum.photos/id/600/800/500) no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
