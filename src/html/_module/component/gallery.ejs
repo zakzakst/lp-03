@@ -1,0 +1,10 @@
+<ul id="js-gallery" class="columns is-multiline is-gapless">
+<% for(let i = 0; i < gallery.length; i++) { -%>
+<% let galleryItem = gallery[i]; -%>
+  <li class="column is-one-quarter">
+    <a class="gallery-item" href="<%= galleryItem.link %>">
+      <img class="gallery-item__img" src="<%= galleryItem.img %>" alt="<%= galleryItem.alt %>">
+    </a>
+  </li>
+<% } -%>
+</ul>

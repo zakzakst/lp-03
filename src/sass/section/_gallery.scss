@@ -1,3 +1,26 @@
 .section-gallery {
   padding: 72px;
 }
+
+.gallery-item {
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-item__img {
+  width: 100%;
+  opacity: 0;
+  filter: grayscale(1);
+  transition: all $transtion-default;
+}
+
+.gallery-item.is-animated {
+  & > .gallery-item__img {
+    opacity: 1;
+    filter: grayscale(1);
+  }
+  &:hover > .gallery-item__img {
+    filter: grayscale(0);
+    transform: scale(1.2);
+  }
+}
