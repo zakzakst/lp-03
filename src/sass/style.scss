@@ -9,6 +9,7 @@
 @import "./common/_utility.scss";
 @import "./common/_footer.scss";
 
-// 各種パーツ
+// 各セクション
+@import "./section/_about.scss";
 @import "./section/_gallery.scss";
 @import "./section/_map.scss";
