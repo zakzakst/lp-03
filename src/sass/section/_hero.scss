@@ -1,0 +1,83 @@
+$hero-text-color: #000;
+$hero-text-color-back: #888;
+
+.section-hero {
+  position: relative;
+}
+
+.hero__text {
+  padding: 72px 0;
+  font-size: 0;
+  text-align: right;
+}
+.hero__text-word {
+  display: block;
+  line-height: 1;
+  font-size: 100px;
+  font-weight: bold;
+  opacity: 0;
+  & > span {
+    display: inline-block;
+    min-width: 30px; // 空白のスペース確保のため
+    text-align: center;
+    color: $hero-text-color-back;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: rotateY(-180deg);
+    &.is-animated {
+      animation: flipText 1s forwards;
+    }
+  }
+}
+@keyframes flipText {
+  0% {
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+  50% {
+    opacity: 1;
+    color: $hero-text-color-back;
+    transform: rotateY(-90deg);
+  }
+  51% {
+    opacity: 1;
+    color: $hero-text-color;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    color: $hero-text-color;
+    transform: rotateY(0);
+  }
+}
+
+.hero__bg {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  overflow: hidden;
+  z-index: -1;
+  perspective: 1000px;
+}
+.hero__bg-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: no-repeat center center;
+  background-size: cover;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  &:nth-child(1) {background-image: url(https://picsum.photos/id/603/800/500);}
+  &:nth-child(2) {background-image: url(https://picsum.photos/id/604/800/500);}
+  &:nth-child(3) {background-image: url(https://picsum.photos/id/605/800/500);}
+  &.is-active {
+    z-index: 2;
+    transform-origin: right center;
+  }
+}
