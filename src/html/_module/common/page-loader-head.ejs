@@ -14,16 +14,17 @@
   align-items: center;
   z-index: 10000;
 }
-.page-loader__content {
-  text-align: center;
-}
 </style>
 
 <script>
+
 // 10秒たったら強制的にロード画面を非表示
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    document.getElementById('js-page-loader').style.display = 'none';
+    const pageLoader = document.getElementById('js-page-loader');
+    if(pageLoader) {
+      document.getElementById('js-page-loader').style.display = 'none';
+    }
   }, 10000);
 }, false);
 </script>
