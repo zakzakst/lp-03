@@ -1,54 +1,57 @@
-$hero-text-color: #000;
-$hero-text-color-back: #888;
-
 .section-hero {
   position: relative;
 }
 
+.hero__loader {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+  animation: heroLoader 2s infinite;
+}
+@keyframes heroLoader {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .hero__text {
   padding: 72px 0;
   font-size: 0;
   text-align: right;
 }
+.page-loader__content .hero__text {
+  display: none;
+}
 .hero__text-word {
   display: block;
   line-height: 1;
+  color: #000;
   font-size: 100px;
   font-weight: bold;
-  opacity: 0;
-  & > span {
-    display: inline-block;
-    min-width: 30px; // 空白のスペース確保のため
-    text-align: center;
-    color: $hero-text-color-back;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    opacity: 0;
-    transform: rotateY(-180deg);
-    &.is-animated {
-      animation: flipText 1s forwards;
+  // ローディングアニメーション用
+  &.is-loader {
+    & > span {
+      display: inline-block;
+      min-width: 28px; // 空白のスペース確保のため
+      text-align: center;
+      color: #888;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      opacity: 0;
+      transform: rotateY(-180deg);
     }
-  }
-}
-@keyframes flipText {
-  0% {
-    opacity: 0;
-    transform: rotateY(-180deg);
-  }
-  50% {
-    opacity: 1;
-    color: $hero-text-color-back;
-    transform: rotateY(-90deg);
-  }
-  51% {
-    opacity: 1;
-    color: $hero-text-color;
-    transform: rotateY(-90deg);
-  }
-  100% {
-    opacity: 1;
-    color: $hero-text-color;
-    transform: rotateY(0);
   }
 }
 

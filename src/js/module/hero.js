@@ -1,39 +1,11 @@
 import { gsap } from "gsap";
 
 export function heroAnim() {
-  splitTextBySpan();
-  showWords();
-  const testBtn = document.getElementById('js-test');
-  setInterval(bgAnim, 5000);
-}
-
-function splitTextBySpan() {
-  const heroWords = document.querySelectorAll('.hero__text-word');
-  [...heroWords].forEach(wordEl => {
-    wordEl.innerHTML = wordEl.textContent.replace(/(.)/g, '<span>$1</span>');
-  });
-}
-
-function showWords() {
-  const letters = document.querySelectorAll('.hero__text-word > span');
-  let count = 0;
-  const showLetter = (letter) => {
-    setTimeout(() => {
-      letter.classList.add('is-animated');
-      count++;
-      if(count < letters.length) {
-        showLetter(letters[count]);
-      }
-    }, 100);
-  }
-  const tl = gsap.timeline({
-    onComplete: () => {
-      showLetter(letters[0]);
-    }
-  });
-  tl.set('.hero__text-word', {
-    opacity: 1,
-  });
+  setTimeout(() => {
+    // 初回だけページ表示1秒後に発火
+    bgAnim();
+    setInterval(bgAnim, 5000);
+  }, 1000);
 }
 
 function bgAnim() {
@@ -48,7 +20,6 @@ function bgAnim() {
     rotateY: 90,
     ease: 'Power4.easeIn',
     onComplete: () => {
-      console.log(bgItems[activeNum]);
       bgItems[activeNum].classList.remove('is-active');
     }
   });
@@ -63,7 +34,6 @@ function bgAnim() {
     ease: 'Power1.easeOut',
     scale: 1,
     onComplete: () => {
-      console.log(bgItems[nextNum]);
       bgItems[nextNum].classList.add('is-active');
     }
   });
